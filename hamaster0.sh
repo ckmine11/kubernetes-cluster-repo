@@ -9,7 +9,7 @@ interval 2
 weight 2
 }
 vrrp_instance VI_1 {
-interface ens190
+interface ens192
 state MASTER
 advert_int 1
 virtual_router_id 51
