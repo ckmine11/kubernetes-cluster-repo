@@ -25,14 +25,14 @@ systemctl start crio
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=https://pkgs.k8s.io/core:/stable:/v1.25/rpm/
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.26/rpm/
 enabled=1
 gpgcheck=1
-gpgkey=https://pkgs.k8s.io/core:/stable:/v1.25/rpm/repodata/repomd.xml.key
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.26/rpm/repodata/repomd.xml.key
 exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
 EOF
 
-dnf install -y kubelet-1.25.0 -y kubeadm-1.25.0  -y kubectl-1.25.0 --disableexcludes=kubernetes
+dnf install -y kubelet-1.26.0 -y kubeadm-1.26.0  -y kubectl-1.26.0 --disableexcludes=kubernetes
 
 systemctl enable kubelet
 systemctl start kubelet
